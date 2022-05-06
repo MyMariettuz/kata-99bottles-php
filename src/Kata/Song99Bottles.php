@@ -307,8 +307,13 @@ class Song99Bottles
             Go to the store and buy some more, 99 bottles of beer on the wall.";
     }
 
-    public function getLine(): string
+    public function getFirstLine(): string
     {
         return "99 bottles of beer on the wall, 99 bottles of beer.";
+    }
+
+    public function getSecondLine(): string
+    {
+        return "Take one down and pass it around, 98 bottles of beer on the wall.";
     }
 }
