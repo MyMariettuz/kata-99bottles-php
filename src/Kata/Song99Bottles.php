@@ -319,7 +319,9 @@ class Song99Bottles
 
     public function getFirstVerse(): string
     {
-        return "99 bottles of beer on the wall, 99 bottles of beer.
-            Take one down and pass it around, 98 bottles of beer on the wall.";
+        $first_line = $this->getFirstLine();
+        $second_line = $this->getSecondLine();
+
+        return $first_line . ' ' . $second_line;
     }
 }
