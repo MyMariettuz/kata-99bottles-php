@@ -324,4 +324,14 @@ class Song99Bottles
 
         return $first_line . ' ' . $second_line;
     }
+
+    public function getFirstLineOfSecondVerse(): string
+    {
+        return "98 bottles of beer on the wall, 98 bottles of beer.";
+    }
+
+    public function getSecondLineOfSecondVerse(): string
+    {
+        return "Take one down and pass it around, 97 bottles of beer on the wall.";
+    }
 }

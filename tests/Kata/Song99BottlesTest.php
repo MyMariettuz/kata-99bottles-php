@@ -344,4 +344,12 @@ class Song99BottlesTest extends TestCase
             $this->song99Bottles->getFirstVerse()
         );
     }
+
+    public function testGetFirstLineSecondVerse(): void
+    {
+        $this->assertEquals(
+            "98 bottles of beer on the wall, 98 bottles of beer.",
+            $this->song99Bottles->getFirstLineOfSecondVerse()
+        );
+    }
 }
