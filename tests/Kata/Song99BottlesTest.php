@@ -325,7 +325,7 @@ class Song99BottlesTest extends TestCase
     {
         $this->assertEquals(
             "99 bottles of beer on the wall, 99 bottles of beer.",
-            $this->song99Bottles->getFirstLine(99)
+            $this->song99Bottles->getFirstLineUntilLastVerse(99)
         );
     }
 
@@ -349,7 +349,7 @@ class Song99BottlesTest extends TestCase
     {
         $this->assertEquals(
             "98 bottles of beer on the wall, 98 bottles of beer.",
-            $this->song99Bottles->getFirstLineOfSecondVerse(98)
+            $this->song99Bottles->getFirstLineUntilLastVerse(98)
         );
     }
 

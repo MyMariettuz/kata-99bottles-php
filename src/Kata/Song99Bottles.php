@@ -307,7 +307,7 @@ class Song99Bottles
             Go to the store and buy some more, 99 bottles of beer on the wall.";
     }
 
-    public function getFirstLine(int $bottles): string
+    public function getFirstLineUntilLastVerse(int $bottles): string
     {
         return $bottles . " bottles of beer on the wall, " . $bottles . " bottles of beer.";
     }
@@ -319,15 +319,10 @@ class Song99Bottles
 
     public function getFirstVerse(): string
     {
-        $first_line = $this->getFirstLine(99);
+        $first_line = $this->getFirstLineUntilLastVerse(99);
         $second_line = $this->getSecondLine(98);
 
         return $first_line . ' ' . $second_line;
-    }
-
-    public function getFirstLineOfSecondVerse(int $bottles): string
-    {
-        return $bottles . " bottles of beer on the wall, " . $bottles . " bottles of beer.";
     }
 
     public function getSecondLineOfSecondVerse(int $bottles): string
@@ -337,7 +332,7 @@ class Song99Bottles
 
     public function getSecondVerse(): string
     {
-        $first_line = $this->getFirstLineOfSecondVerse(98);
+        $first_line = $this->getFirstLineUntilLastVerse(98);
         $second_line = $this->getSecondLineOfSecondVerse(97);
 
         return $first_line . ' ' . $second_line;
