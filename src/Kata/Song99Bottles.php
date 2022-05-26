@@ -317,18 +317,13 @@ class Song99Bottles
         return "Take one down and pass it around, " . $bottles . " bottles of beer on the wall.";
     }
 
-    public function getFirstVerse(): string
+    public function getAllVerseNotLast(int $bottles): string
     {
-        $first_line = $this->getFirstLineUntilLastVerse(99);
-        $second_line = $this->getSecondLineUntilLastVerse(98);
+        $first_line = $this->getFirstLineUntilLastVerse($bottles);
 
-        return $first_line . ' ' . $second_line;
-    }
+        $bottles--;
 
-    public function getSecondVerse(): string
-    {
-        $first_line = $this->getFirstLineUntilLastVerse(98);
-        $second_line = $this->getSecondLineUntilLastVerse(97);
+        $second_line = $this->getSecondLineUntilLastVerse($bottles);
 
         return $first_line . ' ' . $second_line;
     }
