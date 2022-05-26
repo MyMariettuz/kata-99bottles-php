@@ -334,4 +334,12 @@ class Song99Bottles
     {
         return "Take one down and pass it around, 97 bottles of beer on the wall.";
     }
+
+    public function getSecondVerse(): string
+    {
+        $first_line = $this->getFirstLineOfSecondVerse();
+        $second_line = $this->getSecondLineOfSecondVerse();
+
+        return $first_line . ' ' . $second_line;
+    }
 }
