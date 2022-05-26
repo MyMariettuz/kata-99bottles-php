@@ -312,7 +312,7 @@ class Song99Bottles
         return $bottles . " bottles of beer on the wall, " . $bottles . " bottles of beer.";
     }
 
-    public function getSecondLine(int $bottles): string
+    public function getSecondLineUntilLastVerse(int $bottles): string
     {
         return "Take one down and pass it around, " . $bottles . " bottles of beer on the wall.";
     }
@@ -320,20 +320,15 @@ class Song99Bottles
     public function getFirstVerse(): string
     {
         $first_line = $this->getFirstLineUntilLastVerse(99);
-        $second_line = $this->getSecondLine(98);
+        $second_line = $this->getSecondLineUntilLastVerse(98);
 
         return $first_line . ' ' . $second_line;
-    }
-
-    public function getSecondLineOfSecondVerse(int $bottles): string
-    {
-        return "Take one down and pass it around, " . $bottles . " bottles of beer on the wall.";
     }
 
     public function getSecondVerse(): string
     {
         $first_line = $this->getFirstLineUntilLastVerse(98);
-        $second_line = $this->getSecondLineOfSecondVerse(97);
+        $second_line = $this->getSecondLineUntilLastVerse(97);
 
         return $first_line . ' ' . $second_line;
     }
