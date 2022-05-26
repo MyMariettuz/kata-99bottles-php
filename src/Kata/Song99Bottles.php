@@ -342,4 +342,22 @@ class Song99Bottles
 
         return $first_line . ' ' . $second_line;
     }
+
+    public function getFirstLineLastVerse(): string
+    {
+        return "No more bottles of beer on the wall, no more bottles of beer.";
+    }
+
+    public function getSecondLineLastVerse(): string
+    {
+        return "Go to the store and buy some more, 99 bottles of beer on the wall.";
+    }
+
+    public function getLastVerse(): string
+    {
+        $first_line = $this->getFirstLineLastVerse();
+        $second_line = $this->getSecondLineLastVerse();
+
+        return $first_line . ' ' . $second_line;
+    }
 }

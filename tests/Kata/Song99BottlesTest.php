@@ -368,4 +368,28 @@ class Song99BottlesTest extends TestCase
             $this->song99Bottles->getSecondVerse()
         );
     }
+
+    public function testGetFirstLineLastVerse(): void
+    {
+        $this->assertEquals(
+            "No more bottles of beer on the wall, no more bottles of beer.",
+            $this->song99Bottles->getFirstLineLastVerse()
+        );
+    }
+
+    public function testGetSecondLineLastVerse(): void
+    {
+        $this->assertEquals(
+            "Go to the store and buy some more, 99 bottles of beer on the wall.",
+            $this->song99Bottles->getSecondLineLastVerse()
+        );
+    }
+
+    public function testGetLastVerse(): void
+    {
+        $this->assertEquals(
+            "No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, 99 bottles of beer on the wall.",
+            $this->song99Bottles->getLastVerse()
+        );
+    }
 }
