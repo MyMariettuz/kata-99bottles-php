@@ -307,56 +307,56 @@ class Song99Bottles
             Go to the store and buy some more, 99 bottles of beer on the wall.";
     }
 
-    public function getFirstLine(): string
+    public function getFirstLine(int $bottles): string
     {
-        return "99 bottles of beer on the wall, 99 bottles of beer.";
+        return $bottles . " bottles of beer on the wall, " . $bottles . " bottles of beer.";
     }
 
-    public function getSecondLine(): string
+    public function getSecondLine(int $bottles): string
     {
-        return "Take one down and pass it around, 98 bottles of beer on the wall.";
+        return "Take one down and pass it around, " . $bottles . " bottles of beer on the wall.";
     }
 
     public function getFirstVerse(): string
     {
-        $first_line = $this->getFirstLine();
-        $second_line = $this->getSecondLine();
+        $first_line = $this->getFirstLine(99);
+        $second_line = $this->getSecondLine(98);
 
         return $first_line . ' ' . $second_line;
     }
 
-    public function getFirstLineOfSecondVerse(): string
+    public function getFirstLineOfSecondVerse(int $bottles): string
     {
-        return "98 bottles of beer on the wall, 98 bottles of beer.";
+        return $bottles . " bottles of beer on the wall, " . $bottles . " bottles of beer.";
     }
 
-    public function getSecondLineOfSecondVerse(): string
+    public function getSecondLineOfSecondVerse(int $bottles): string
     {
-        return "Take one down and pass it around, 97 bottles of beer on the wall.";
+        return "Take one down and pass it around, " . $bottles . " bottles of beer on the wall.";
     }
 
     public function getSecondVerse(): string
     {
-        $first_line = $this->getFirstLineOfSecondVerse();
-        $second_line = $this->getSecondLineOfSecondVerse();
+        $first_line = $this->getFirstLineOfSecondVerse(98);
+        $second_line = $this->getSecondLineOfSecondVerse(97);
 
         return $first_line . ' ' . $second_line;
     }
 
-    public function getFirstLineLastVerse(): string
+    public function getFirstLineLastVerse(string $no_more): string
     {
-        return "No more bottles of beer on the wall, no more bottles of beer.";
+        return ucfirst($no_more) . " bottles of beer on the wall, " . $no_more . " bottles of beer.";
     }
 
-    public function getSecondLineLastVerse(): string
+    public function getSecondLineLastVerse(int $bottles): string
     {
-        return "Go to the store and buy some more, 99 bottles of beer on the wall.";
+        return "Go to the store and buy some more, " . $bottles . " bottles of beer on the wall.";
     }
 
     public function getLastVerse(): string
     {
-        $first_line = $this->getFirstLineLastVerse();
-        $second_line = $this->getSecondLineLastVerse();
+        $first_line = $this->getFirstLineLastVerse("no more");
+        $second_line = $this->getSecondLineLastVerse(99);
 
         return $first_line . ' ' . $second_line;
     }
