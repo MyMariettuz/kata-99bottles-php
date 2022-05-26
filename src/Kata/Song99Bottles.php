@@ -307,26 +307,43 @@ class Song99Bottles
             Go to the store and buy some more, 99 bottles of beer on the wall.";
     }
 
-    public function getFirstLineUntilLastVerse(int $bottles): string
+    public function getFirstLineUntilOneBottle(int $bottles): string
     {
         return $bottles . " bottles of beer on the wall, " . $bottles . " bottles of beer.";
     }
 
-    public function getSecondLineUntilLastVerse(int $bottles): string
+    public function getSecondLineUntilOneBottle(int $bottles): string
     {
         return "Take one down and pass it around, " . $bottles . " bottles of beer on the wall.";
     }
 
-    public function getAllVerseNotLast(int $bottles): string
+    public function getVerseUntil3Bottles(int $bottles): string
     {
-        $first_line = $this->getFirstLineUntilLastVerse($bottles);
+        $first_line = $this->getFirstLineUntilOneBottle($bottles);
 
         $bottles--;
 
-        $second_line = $this->getSecondLineUntilLastVerse($bottles);
+        $second_line = $this->getSecondLineUntilOneBottle($bottles);
 
         return $first_line . ' ' . $second_line;
     }
+
+    public function getAllVerseUntil3Bottles(): string
+    {
+        $all_verse_not_last = "";
+
+        for ($bottles = 99; $bottles >= 3; $bottles--) {
+            $all_verse_not_last .= $this->getVerseUntil3Bottles($bottles);
+
+            if ($bottles > 3) {
+                $all_verse_not_last .= PHP_EOL;
+            }
+        }
+
+        return $all_verse_not_last;
+    }
+
+    //fare verso 2, 1, last
 
     public function getFirstLineLastVerse(string $no_more): string
     {
